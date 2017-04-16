@@ -13,7 +13,7 @@ instance (maybe using flynn-odoo).
 ## Install
 
 This covers the installation on a flynn-odoo instance, see
-(flynn-odoo)[https://github.com/grauschnabel/flynn-odoo] for details.
+[flynn-odoo](https://github.com/grauschnabel/flynn-odoo) for details.
 
 Put flynn_odoo_letsencrypt into the `addons` directory of flynn-odoo.
 
