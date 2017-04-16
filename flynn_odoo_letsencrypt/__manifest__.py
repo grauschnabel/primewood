@@ -7,9 +7,11 @@
     """,
 
     'description': """
-      This will create a letsencrypt ssl certificate for the odoo installation.
-      http will then be redirected to https requets.
-      The certificate will be upgraded once a week.
+      This will create a letsencrypt ssl certificate for the odoo installation.\n
+      \n
+      Planned:\n
+      - redirect from http to https.\n
+      - auto renew of certificates.
     """,
     'license': "AGPL-3",
 
