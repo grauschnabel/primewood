@@ -1,0 +1,97 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="flynn_odoo_letsencrypt.list">
+      <field name="name">Let's encrypt</field>
+      <field name="model">flynn_odoo_letsencrypt.flynn_odoo_letsencrypt</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="flynn_app"/>
+          <field name="expires"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="flynn_odoo_letsencrypt.form">
+      <field name="name">Let's Encrypt</field>
+      <field name="model">flynn_odoo_letsencrypt.flynn_odoo_letsencrypt</field>
+      <field name="arch" type="xml">
+        <form string="Let's encrypt">
+          <header>
+            <button string="Generate Key" type="object" name="action_generate_key"
+                    states="priv_key" class="oe_highlight"/>
+            <button string="Register and Accept TOS" type="object" name="action_register"
+                    states="register" class="oe_highlight"/>
+            <button string="Get Certificate" type="object" name="action_install"
+                    states="cert" class="oe_highlight"/>
+            <button string="Install on Flynn" type="object" name="action_flynn"
+                    states="flynn" class="oe_highlight"/>
+            <button string="Update" type="object" name="action_update"
+                    states="update" class="oe_highlight"/>
+            <field name="state" widget="statusbar"/>
+          </header>
+          <sheet>
+            <div class="oe_title">
+              <label for="name" class="oe_edit_only" string="Domain Name"/>
+              <h1><field name="name"/></h1>
+            </div>
+            <notebook>
+              <page string="Certificate">
+                <group>
+                  <field name="key"/>
+                  <field name="cert"/>
+                  <field name="expires"/>
+                  <field name="tos"/>
+                  <field name="dom_verified"/>
+                  <field name="dom_key"/>
+                  <field name="dom_csr"/>
+                </group>
+              </page>
+              <page string="Terms of Service">
+                <group>
+                  <field name="tos_text"/>
+                </group>
+              </page>
+              <page string="Flynn">
+                <group>
+                  <field name="flynn_controller_url"/>
+                  <field name="flynn_auth_key"/>
+                  <field name="flynn_app"/>
+                  <field name="flynn_route_id"/>
+                  <field name="flynn_cert"/>
+                </group>
+              </page>
+            </notebook>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="flynn_odoo_letsencrypt.action_window">
+      <field name="name">Let's encrypt</field>
+      <field name="res_model">flynn_odoo_letsencrypt.flynn_odoo_letsencrypt</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="flynn_odoo_letsencrypt.action_server">
+      <field name="name">flynn_odoo_letsencrypt server</field>
+      <field name="model_id" ref="model_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <menuitem name="Let's encrypt" id="flynn_odoo_letsencrypt.menu_main" parent="base.menu_administration"
+              action="flynn_odoo_letsencrypt.action_window" groups="base.group_system"/>
+
+  </data>
+</odoo>
