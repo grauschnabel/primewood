@@ -39,9 +39,9 @@
             <notebook>
               <page string="Certificate">
                 <group>
-                  <field name="key"/>
                   <field name="cert"/>
                   <field name="expires"/>
+                  <field name="key"/>
                   <field name="tos"/>
                   <field name="dom_verified"/>
                   <field name="dom_key"/>
@@ -74,21 +74,6 @@
       <field name="res_model">flynn_odoo_letsencrypt.flynn_odoo_letsencrypt</field>
       <field name="view_mode">tree,form</field>
     </record>
-
-    <!-- server action to the one above -->
-    <!--
-    <record model="ir.actions.server" id="flynn_odoo_letsencrypt.action_server">
-      <field name="name">flynn_odoo_letsencrypt server</field>
-      <field name="model_id" ref="model_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt"/>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": self._name,
-        }
-      </field>
-    </record>
-    -->
 
     <menuitem name="Let's encrypt" id="flynn_odoo_letsencrypt.menu_main" parent="base.menu_administration"
               action="flynn_odoo_letsencrypt.action_window" groups="base.group_system"/>

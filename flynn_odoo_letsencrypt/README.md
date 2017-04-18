@@ -5,9 +5,9 @@ instance (maybe using flynn-odoo).
 
 ## Features
 - Request and install a certificate from letsencrypt on the flynn application.
+- Auto renew of certificates about one month before it gets outdated.
 
 ## Planed features:
-- Auto renew of certificates about one month before it gets outdated.
 - Redirect all requests to odoo from http to https.
 
 ## Install

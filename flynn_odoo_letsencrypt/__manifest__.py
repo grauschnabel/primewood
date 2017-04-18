@@ -25,7 +25,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base', 'mail'],
     'installable': True,
     'auto_install': False,
 
@@ -34,9 +34,6 @@
         'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-    ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
+        'data/data.xml'
     ],
 }

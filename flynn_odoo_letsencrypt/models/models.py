@@ -119,7 +119,8 @@ class flynn_odoo_letsencrypt(models.Model):
             csr = self._gen_csr()
             self.dom_csr = OpenSSL.crypto.dump_certificate_request(OpenSSL.crypto.FILETYPE_PEM, csr)
 
-        return self._update()
+        if self._update():
+            self.state = 'flynn'
 
     @api.one
     def action_flynn(self):
@@ -134,6 +135,31 @@ class flynn_odoo_letsencrypt(models.Model):
     def action_update(self):
         self._update()
         self._update_flynn()
+
+    @api.model
+    def cron_update(self): # method of this model
+        #        self.search(['expires', '<', ''])
+        records = self.search([('expires', '!=', None)])
+        for r in records:
+            try:
+                r._update()
+                r._update_flynn()
+                _logger.info("Updated letsencrypt certificate for %s"% r.domain)
+            except Exception as e:
+                _logger.warning(_("Cron update failed, try manually."))
+                _logger.warning(e)
+                # Send message to group:
+                self._send_cron_message(e)
+
+                return False
+        return True
+
+    def _send_cron_message(self, e):
+        users = self.env.ref('base.group_erp_manager').users
+        for u in users:
+            _logger.warning("message_post to %s" % u)
+            u.message_post(subject="Flynn Cronjob failed",
+                           body="Flynn cronjob failed with %s"% e)
 
     def _update(self):
         if not self.dom_key or not self.dom_csr:
@@ -175,7 +201,7 @@ class flynn_odoo_letsencrypt(models.Model):
         if not self.dom_verified:
             _logger.warning('%s was not successfully self-verified. '
                            'CA is likely to fail as well!', self.name)
-            return -1
+            raise exceptions.Warning(_("%s was not successfully self-verified. CA is likely to fail as well!"% self.name))
         else:
             _logger.info('%s was successfully self-verified', self.name)
 
@@ -192,7 +218,6 @@ class flynn_odoo_letsencrypt(models.Model):
         if self.cert:
             expire_time = time.strptime(certr.body.get_notAfter(), "%Y%m%d%H%M%SZ")
             self.expires = time.strftime(DEFAULT_SERVER_DATETIME_FORMAT, expire_time)
-            self.state = 'flynn'
 
         return self.cert
 
@@ -236,9 +261,9 @@ class flynn_odoo_letsencrypt(models.Model):
 
     def _update_flynn(self):
         if not self.cert:
-            _logger.warning("No certificate found")
+            _logger.warning("No certificate found.")
             self.state = 'cert'
-            return None
+            raise exceptions.Warning(_('No certificate found.'))
         if not self.flynn_auth_key or not self.flynn_app or not self.flynn_controller_url or not self.flynn_cert:
             _logger.warning("not all flynn vars set")
             raise exceptions.Warning(_("You need to set all variables first."))
