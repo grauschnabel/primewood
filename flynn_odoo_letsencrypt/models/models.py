@@ -12,6 +12,8 @@ from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.hazmat.primitives import serialization
 import OpenSSL
+
+import json
 import time
 
 from acme import client
@@ -20,7 +22,6 @@ from acme import jose
 from acme import challenges
 
 import requests
-import json
 
 # DIRECTORY_URL = 'https://acme-staging.api.letsencrypt.org/directory' # staging
 DIRECTORY_URL = 'https://acme-v01.api.letsencrypt.org/directory' # production
@@ -32,6 +33,31 @@ def get_challenge_dir():
     if not os.path.exists(p):
         os.makedirs(p)
     return p
+
+class Challenge(object):
+
+    _path = ""
+    _validation = ""
+
+    def __new__(cls, *args, **kwds):
+        self = "__self__"
+        if not hasattr(cls, self):
+            instance = object.__new__(cls)
+            instance.init(*args, **kwds)
+            setattr(cls, self, instance)
+        return getattr(cls, self)
+
+    def init(self, *args, **kwds):
+        pass
+
+    def set_challenge(self, p, v):
+        self._path = p
+        self._validation = v
+
+    def validate(self, p):
+        if self._path == p:
+            return self._validation
+        return False
 
 class flynn_odoo_letsencrypt(models.Model):
     """Flynn odoo model.  This holds the private key and certificate for different domains."""
@@ -98,9 +124,9 @@ class flynn_odoo_letsencrypt(models.Model):
     def action_register(self):
         if not self.key:
             self._generate_key
-        k = self._deserialize_key(self.key)
+        key = self._deserialize_key(self.key)
 
-        acme = client.Client(DIRECTORY_URL, k)
+        acme = client.Client(DIRECTORY_URL, key)
         regr = acme.register()
         self.tos_text = regr.terms_of_service
         acme.agree_to_tos(regr)
@@ -174,45 +200,48 @@ class flynn_odoo_letsencrypt(models.Model):
 
         authzr = acme.request_challenges(
             identifier=messages.Identifier(typ=messages.IDENTIFIER_FQDN, value=self.name))
-        authzr, authzr_response = acme.poll(authzr)
 
         challb = self._supported_challb(authzr)
         if not challb:
             _logger.warning(_("Didn't find any http01 challenge. Just try again."))
             _logger.warning(authzr)
-            _logger.warning(authzr_response)
             raise exceptions.Warning(_("Didn't find any http01 challenge. Just try again."))
         response, self.challenge_validation = challb.response_and_validation(k)
         self.challenge_path = challb.path.split('/')[-1]
+
+        challenge = Challenge()
+        challenge.set_challenge(self.challenge_path, self.challenge_validation)
 
         _logger.info("Need to response %s on url %s", self.challenge_validation, self.challenge_path)
 
         # write data to file, because it seems that the data is not written to the database bevor
         # the controller requests it.  So the controller loads it from the file:
-        challenge_file = os.path.join(get_challenge_dir(), self.challenge_path)
-        f = open(challenge_file, 'w')
-        f.write(self.challenge_validation)
-        _logger.info("saved %s to '%s'", self.challenge_validation, challenge_file)
+        #challenge_file = os.path.join(get_challenge_dir(), self.challenge_path)
+        #f = open(challenge_file, 'w')
+        #f.write(self.challenge_validation)
+        #_logger.info("saved %s to '%s'", self.challenge_validation, challenge_file)
 
-        self.dom_verified = response.simple_verify(
-            challb.chall, self.name, acme.key.public_key())
-        f.close()
+        #self.dom_verified = response.simple_verify(
+        #    challb.chall, self.name, acme.key.public_key())
+        #f.close()
 
-        if not self.dom_verified:
-            _logger.warning('%s was not successfully self-verified. '
-                           'CA is likely to fail as well!', self.name)
-            raise exceptions.Warning(_("%s was not successfully self-verified. CA is likely to fail as well!"% self.name))
-        else:
-            _logger.info('%s was successfully self-verified', self.name)
+        #if not self.dom_verified:
+        #    _logger.warning('%s was not successfully self-verified. '
+        #                   'CA is likely to fail as well!', self.name)
+        #            raise exceptions.Warning(_("%s was not successfully self-verified. CA is likely to fail as well!"% self.name))
+        #else:
+        #    _logger.info('%s was successfully self-verified', self.name)
 
         # os.unlink(challenge_file)
         # _logger.info("unlinked %s", challenge_file)
+
+        #        authzr, authzr_response = acme.poll(authzr)
 
         acme.answer_challenge(challb, response)
 
         csr = OpenSSL.crypto.load_certificate_request(OpenSSL.crypto.FILETYPE_PEM, self.dom_csr)
 
-        certr = acme.request_issuance(jose.util.ComparableX509(csr), (authzr,))
+        certr, authzr = acme.poll_and_request_issuance(jose.util.ComparableX509(csr), (authzr,))
 
         self.cert = OpenSSL.crypto.dump_certificate(OpenSSL.crypto.FILETYPE_PEM, certr.body)
         if self.cert:
