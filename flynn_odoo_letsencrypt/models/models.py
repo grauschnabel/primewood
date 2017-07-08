@@ -67,15 +67,15 @@ class flynn_odoo_letsencrypt(models.Model):
         return urlparse.urlparse(self.env['ir.config_parameter'].get_param('web.base.url')).netloc
 
     name = fields.Char(string="Domain", default=_compute_domain_name, required=True, index=True, help="The domain you are hosting your odoo installation.")
-    key = fields.Text(string="TLS private key")
-    cert = fields.Text(string="TLS public certificate")
-    tos = fields.Boolean(string="Accept Terms of Service", default=False, readonly=True)
-    tos_text = fields.Text(string="Let's encrypt's terms of service", readonly=True, default="Will be requested by registration.")
+    key = fields.Text(string="TLS private key", copy=False)
+    cert = fields.Text(string="TLS public certificate", copy=False)
+    tos = fields.Boolean(string="Accept Terms of Service", default=False, readonly=True, copy=False)
+    tos_text = fields.Text(string="Let's encrypt's terms of service", readonly=True, default="Will be requested by registration.", copy=False)
 
-    dom_verified = fields.Boolean(string="Domain verified", default=False, readonly=True)
-    dom_key = fields.Text(string="Domain private key")
-    dom_csr = fields.Text(string="Certificate signing request")
-    expires = fields.Date(string="Expire date", readonly=True)
+    dom_verified = fields.Boolean(string="Domain verified", default=False, readonly=True, copy=False)
+    dom_key = fields.Text(string="Domain private key", copy=False)
+    dom_csr = fields.Text(string="Certificate signing request", copy=False)
+    expires = fields.Date(string="Expire date", readonly=True, copy=False)
 
     flynn_controller_url = fields.Char(string="Flynn controller url", help="Like https://controller.$CLUSTER_DOMAIN, see `flynn cluster`")
     flynn_auth_key = fields.Char(string="Flynn auth key", help="The value of `flynn -a controller env get AUTH_KEY`")
@@ -83,8 +83,8 @@ class flynn_odoo_letsencrypt(models.Model):
     flynn_route_id = fields.Char(string="Flynn route ID", help="The ID of the route to add the certificate.  See `flynn -a yourapp route`, use the full string like 'http/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'")
     flynn_cert = fields.Text(string="Flynn ca-cert", help="May be found in ~/.flynn/ca-certs/. Paste content here.")
 
-    challenge_path = fields.Char("Challenge Path", index=True)
-    challenge_validation = fields.Char("Challenge Validation")
+    challenge_path = fields.Char("Challenge Path", index=True, copy=False)
+    challenge_validation = fields.Char("Challenge Validation", copy=False)
 
     state = fields.Selection([
         ('priv_key', "Generate Key"),
@@ -92,7 +92,7 @@ class flynn_odoo_letsencrypt(models.Model):
         ('cert', "Get Certificate"),
         ('flynn', "Install to Flynn"),
         ('update', "Update")
-    ], default="priv_key")
+    ], default="priv_key", copy=False)
 
     @api.one
     def action_generate_key(self):
@@ -170,7 +170,7 @@ class flynn_odoo_letsencrypt(models.Model):
             try:
                 r._update()
                 r._update_flynn()
-                _logger.info("Updated letsencrypt certificate for %s"% r.domain)
+                _logger.info("Updated letsencrypt certificate for %s"% r.name)
             except Exception as e:
                 _logger.warning(_("Cron update failed, try manually."))
                 _logger.warning(e)
