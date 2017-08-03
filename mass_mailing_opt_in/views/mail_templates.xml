@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+      <record id="mass_mailing_opt_in_welcome_email_template" model="mail.template">
+        <field name="name">Welcome to the Newsletter Template</field>
+        <field name="email_from">"${object.company_id.name}" &lt;${object.company_id.email}&gt;</field>
+        <field name="subject">Welcome to our Newsletter, ${object.name}</field>
+        <field name="email_to">${object.email|safe}</field>
+        <field name="model_id" ref="model_mail_mass_mailing_contact"/>
+        <field name="auto_delete" eval="False"/>
+        <field name="body_html">
+          <![CDATA[
+          <h1>Hello ${object.name}.</h1>
+          <p>you are almost ready to get the letter. Just click on the link below:</p>
+          <p><a href="${object.subscribe_to_newsletter_url}">Subscribe</a></p>
+          <p>Thank you.</p>
+          ]]>
+        </field>
+      </record>
+    </data>
+</odoo>

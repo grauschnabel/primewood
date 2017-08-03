@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="mass_mailing_opt_in_send_email" model="ir.actions.server">
+      <field name="name">Send validation email for mass_mailing</field>
+      <field name="model_id" ref="mass_mailing.model_mail_mass_mailing_contact"/>
+      <field name="code">action = env['mail.mass_mailing.contact'].send_validation_email()</field>
+    </record>
+
+    <record id="mass_mailing_opt_in_send_email_on_write" model="base.action.rule">
+      <field name="name">Send email on write if opt out.</field>
+      <field name="kind">on_create</field>
+      <field name="model_id" ref="mass_mailing.model_mail_mass_mailing_contact"/>
+      <field name="act_user_id" ref="base.user_root"/>
+      <field name="server_action_ids" eval="[(6, 0, [ref('mass_mailing_opt_in_send_email')])]"/>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <record id="inherited_view_mass_mailing_opt_in_configuration" model="ir.ui.view">
+        <field name="inherit_id" ref="mass_mailing.view_mass_mailing_configuration"/>
+        <field name="name">mass.mailing.config.settings.opt_in</field>
+        <field name="model">mass.mailing.config.settings</field>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='mass_mailing_group']" position="inside">
+                <field name="group_mass_mailing_opt_in" widget="radio"/>
+            </xpath>
+        </field>
+    </record>
+  </data>
+</odoo>

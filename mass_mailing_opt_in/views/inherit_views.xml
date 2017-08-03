@@ -1,0 +1,13 @@
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="opt_in_inherit_view_mail_mass_mailing_contact_tree">
+      <field name="inherit_id" ref="mass_mailing.view_mail_mass_mailing_contact_tree"/>
+      <field name="model">mail.mass_mailing.contact</field>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='unsubscription_date']" position="after">
+          <field name="subscription_date"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,39 @@
+<odoo>
+  <data>
+    <template id="validated">
+      <t t-call="website.layout">
+        <t t-set="pageName" t-value="'Email validated'"/>
+        <div id="wrap" class="oe_structure oe_empty">
+          <section class="s_text_block">
+            <div class="container">
+              <h2 class="text-center">Email Validated</h2>
+              <div class="row">
+                <div class="col-md-12 mb16 mt16">
+                  <p style="text-align: center; ">Your Email <b><t t-esc="contact.email"/></b> has been validated.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </t>
+    </template>
+    <template id="contact_not_found">
+      <t t-call="website.layout">
+        <t t-set="pageName" t-value="'Contact not found'"/>
+        <div id="wrap" class="oe_structure oe_empty">
+          <section class="s_text_block">
+            <div class="container">
+              <h2 class="text-center">Contact not found</h2>
+              <div class="row">
+                <div class="col-md-12 mb16 mt16">
+                  <p style="text-align: center; "><b>Sorry,</b><br/>
+                  We could not find any contact to validate on this location.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </t>
+    </template>
+  </data>
+</odoo>
