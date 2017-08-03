@@ -1,0 +1,128 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* mass_mailing_opt_in
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-03 17:53+0000\n"
+"PO-Revision-Date: 2017-08-03 20:09+0200\n"
+"Last-Translator: Martin Kaffanke <m.kaffanke@primewood.at>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: de\n"
+"X-Generator: Poedit 2.0.3\n"
+
+#. module: mass_mailing_opt_in
+#: model:mail.template,body_html:mass_mailing_opt_in.mass_mailing_opt_in_welcome_email_template
+msgid ""
+"\n"
+"          \n"
+"          <h1>Hello ${object.name}.</h1>\n"
+"          <p>you are almost ready to get the letter. Just click on the link below:</p>\n"
+"          <p><a href=\"${object.subscribe_to_newsletter_url}\">Subscribe</a></p>\n"
+"          <p>Thank you.</p>\n"
+"          \n"
+"        "
+msgstr ""
+"\n"
+"          \n"
+"          <h1>Hallo ${object.name}.</h1>\n"
+"          <p>Sie haben es fast geschafft.  Bitte klicken Sie einfach auf diese Link um ihre Emailadresse zu bestätigen.</p>\n"
+"          <p><a href=\"${object.subscribe_to_newsletter_url}\">Anmelden</a></p>\n"
+"          <p>Herzlichen Dank!</p>\n"
+"          \n"
+"        "
+
+#. module: mass_mailing_opt_in
+#: model:ir.ui.view,arch_db:mass_mailing_opt_in.contact_not_found
+msgid ""
+"<b>Sorry,</b><br/>\n"
+"                  We could not find any contact to validate on this location."
+msgstr ""
+"<b>Es tut uns leid,</b><br/>\n"
+"                  Wir konnten unter diesem Link keinen Eintrag finden."
+
+#. module: mass_mailing_opt_in
+#: model:ir.ui.view,arch_db:mass_mailing_opt_in.contact_not_found
+msgid "Contact not found"
+msgstr "Kontakt nicht gefunden"
+
+#. module: mass_mailing_opt_in
+#: model:ir.ui.view,arch_db:mass_mailing_opt_in.validated
+msgid "Email Validated"
+msgstr "Email Adresse bestätigt."
+
+#. module: mass_mailing_opt_in
+#: model:ir.model.fields,field_description:mass_mailing_opt_in.field_mail_mass_mailing_contact_company_id
+msgid "Get the current company to set email from"
+msgstr "Setze die Email-Absendeadresse aus der aktuellen Unternehmen."
+
+#. module: mass_mailing_opt_in
+#: model:ir.model,name:mass_mailing_opt_in.model_mail_mass_mailing_contact
+msgid "Mass Mailing Contact"
+msgstr "Massenmailing Kontakt"
+
+#. module: mass_mailing_opt_in
+#: selection:mass.mailing.config.settings,group_mass_mailing_opt_in:0
+msgid "New contacts are default opted in when created."
+msgstr "Neue Kontakte sind automatisch angemeldet (opt-in)."
+
+#. module: mass_mailing_opt_in
+#: selection:mass.mailing.config.settings,group_mass_mailing_opt_in:0
+msgid "New contacts have to click a link in an 'Welcome Email' to opt in to the list.  (This covers european laws.)"
+msgstr "Neue Kontakte bekommen eine Email mit einem Link, um den Eintrag in die Liste zu bestätigen. (Europäische Gesetze)"
+
+#. module: mass_mailing_opt_in
+#: model:res.groups,name:mass_mailing_opt_in.group_mass_mailing_opt_in
+msgid "Opt in for mass mailing"
+msgstr "Anmeldung zum Massenmailing"
+
+#. module: mass_mailing_opt_in
+#: model:ir.model.fields,field_description:mass_mailing_opt_in.field_mass_mailing_config_settings_group_mass_mailing_opt_in
+msgid "Opt-In or Opt-Out"
+msgstr "Opt-In oder Opt-Out"
+
+#. module: mass_mailing_opt_in
+#: model:ir.actions.server,name:mass_mailing_opt_in.mass_mailing_opt_in_send_email
+msgid "Send validation email for mass_mailing"
+msgstr "Sende eine Email zur Bestätigung des Listeneintrages."
+
+#. module: mass_mailing_opt_in
+#: model:ir.model.fields,field_description:mass_mailing_opt_in.field_mail_mass_mailing_contact_subscription_date
+msgid "Subscription Date"
+msgstr "Anmeldedatum"
+
+#. module: mass_mailing_opt_in
+#: model:ir.model.fields,field_description:mass_mailing_opt_in.field_mail_mass_mailing_contact_subscribe_to_newsletter_url
+msgid "Subscription URL"
+msgstr "Anmeldelink"
+
+#. module: mass_mailing_opt_in
+#: model:ir.model.fields,field_description:mass_mailing_opt_in.field_mail_mass_mailing_contact_validation_key
+msgid "Validation string for the email to validate."
+msgstr "Validierungs Zeichenkette"
+
+#. module: mass_mailing_opt_in
+#: model:mail.template,subject:mass_mailing_opt_in.mass_mailing_opt_in_welcome_email_template
+msgid "Welcome to our Newsletter, ${object.name}"
+msgstr "Herzlich Willkommen zu unserem Newsletter, ${object.name}"
+
+#. module: mass_mailing_opt_in
+#: model:ir.ui.view,arch_db:mass_mailing_opt_in.validated
+msgid "Your Email"
+msgstr "Ihre Email Adresse"
+
+#. module: mass_mailing_opt_in
+#: model:ir.ui.view,arch_db:mass_mailing_opt_in.validated
+msgid "has been validated."
+msgstr "wurde bestätigt."
+
+#. module: mass_mailing_opt_in
+#: model:ir.model,name:mass_mailing_opt_in.model_mass_mailing_config_settings
+msgid "mass.mailing.config.settings"
+msgstr "mass.mailing.config.settings"

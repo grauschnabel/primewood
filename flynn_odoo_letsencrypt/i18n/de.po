@@ -1,0 +1,298 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* flynn_odoo_letsencrypt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-08-03 18:38+0000\n"
+"PO-Revision-Date: 2017-08-03 20:52+0200\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.0.3\n"
+"Last-Translator: Martin Kaffanke <m.kaffanke@primewood.at>\n"
+"Language: de\n"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_tos
+msgid "Accept Terms of Service"
+msgstr "Nutzungsbedinungen akzeptieren"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.ui.view,arch_db:flynn_odoo_letsencrypt.form
+msgid "Certificate"
+msgstr "Zertifikat"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_dom_csr
+msgid "Certificate signing request"
+msgstr "Certificate signing request"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_challenge_path
+msgid "Challenge Path"
+msgstr "Challenge Pfad"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_challenge_validation
+msgid "Challenge Validation"
+msgstr "Challenge Valildierung"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_create_uid
+msgid "Created by"
+msgstr "Erstellt von"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_create_date
+msgid "Created on"
+msgstr "Erstellt am"
+
+#. module: flynn_odoo_letsencrypt
+#: code:addons/flynn_odoo_letsencrypt/models/models.py:175
+#, python-format
+msgid "Cron update failed, try manually."
+msgstr "Cron update fehlgeschlagen, bitte manuell versuchen."
+
+#. module: flynn_odoo_letsencrypt
+#: code:addons/flynn_odoo_letsencrypt/models/models.py:206
+#: code:addons/flynn_odoo_letsencrypt/models/models.py:208
+#, python-format
+msgid "Didn't find any http01 challenge. Just try again."
+msgstr "Es wurde keine http01 Challenge gefunden. Bitte nochmal versuchen."
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_display_name
+msgid "Display Name"
+msgstr "Anzeigename"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_name
+msgid "Domain"
+msgstr "Domain"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.ui.view,arch_db:flynn_odoo_letsencrypt.form
+msgid "Domain Name"
+msgstr "Name der Domain"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_dom_key
+msgid "Domain private key"
+msgstr "Privater Schlüssel zur Domain"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_dom_verified
+msgid "Domain verified"
+msgstr "Domain bestätigt"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_expires
+msgid "Expire date"
+msgstr "Läuft aus am"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.ui.view,arch_db:flynn_odoo_letsencrypt.form
+msgid "Flynn"
+msgstr "Flynn"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_flynn_app
+msgid "Flynn application"
+msgstr "Flynn Applikation"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_flynn_auth_key
+msgid "Flynn auth key"
+msgstr "Flynn Auth Key"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_flynn_cert
+msgid "Flynn ca-cert"
+msgstr "Flynn ca-cert"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_flynn_controller_url
+msgid "Flynn controller url"
+msgstr "Flynn Controller url"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_flynn_route_id
+msgid "Flynn route ID"
+msgstr "Flynn Routen ID"
+
+#. module: flynn_odoo_letsencrypt
+#: selection:flynn_odoo_letsencrypt.flynn_odoo_letsencrypt,state:0
+#: model:ir.ui.view,arch_db:flynn_odoo_letsencrypt.form
+msgid "Generate Key"
+msgstr "Schlüssel erstellen"
+
+#. module: flynn_odoo_letsencrypt
+#: selection:flynn_odoo_letsencrypt.flynn_odoo_letsencrypt,state:0
+#: model:ir.ui.view,arch_db:flynn_odoo_letsencrypt.form
+msgid "Get Certificate"
+msgstr "Zertifikat holen"
+
+#. module: flynn_odoo_letsencrypt
+#: code:addons/flynn_odoo_letsencrypt/models/models.py:311
+#, python-format
+msgid "Got 401 unauthorized on your flynn cluster."
+msgstr "Flynn cluster antwortete mit 401 'Nicht Berechtigt'"
+
+#. module: flynn_odoo_letsencrypt
+#: code:addons/flynn_odoo_letsencrypt/models/models.py:313
+#, python-format
+msgid "Got bad status: %d GET on %s"
+msgstr "Fehlerhafter Status: %d GET von %s"
+
+#. module: flynn_odoo_letsencrypt
+#: code:addons/flynn_odoo_letsencrypt/models/models.py:327
+#, python-format
+msgid "Got bad status: %d PUT on %s"
+msgstr "Fehlerhafter Status: %d PUT von %s"
+
+#. module: flynn_odoo_letsencrypt
+#: code:addons/flynn_odoo_letsencrypt/models/models.py:309
+#, python-format
+msgid "Got bad status: %d on GET %s"
+msgstr "Fehlerhafter Status: %d von GET %s"
+
+#. module: flynn_odoo_letsencrypt
+#: code:addons/flynn_odoo_letsencrypt/models/models.py:328
+#, python-format
+msgid "Got bad status: %d on PUT %s"
+msgstr "Fehlerhafter Status: %d von PUT %s"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_id
+msgid "ID"
+msgstr "ID"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.ui.view,arch_db:flynn_odoo_letsencrypt.form
+msgid "Install on Flynn"
+msgstr "Installiere in Flynn"
+
+#. module: flynn_odoo_letsencrypt
+#: selection:flynn_odoo_letsencrypt.flynn_odoo_letsencrypt,state:0
+msgid "Install to Flynn"
+msgstr "Installiere in Flynn"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt___last_update
+msgid "Last Modified on"
+msgstr "Letzte Änderung"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_write_uid
+msgid "Last Updated by"
+msgstr "Letztes Update von"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_write_date
+msgid "Last Updated on"
+msgstr "Letztes Update am"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.actions.act_window,name:flynn_odoo_letsencrypt.action_window
+#: model:ir.ui.menu,name:flynn_odoo_letsencrypt.menu_main
+#: model:ir.ui.view,arch_db:flynn_odoo_letsencrypt.form
+msgid "Let's encrypt"
+msgstr "Let's encrypt"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_tos_text
+msgid "Let's encrypt's terms of service"
+msgstr "Let's encrypt's Nutzungsbedingungen"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,help:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_flynn_controller_url
+msgid "Like https://controller.$CLUSTER_DOMAIN, see `flynn cluster`"
+msgstr "Wie https://controller.$CLUSTER_DOMAIN, siehe `flynn cluster`"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,help:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_flynn_cert
+msgid "May be found in ~/.flynn/ca-certs/. Paste content here."
+msgstr "Könnte in ~/.flynn/ca-certs/ gefunden werden. Inhalt hier einfügen."
+
+#. module: flynn_odoo_letsencrypt
+#: code:addons/flynn_odoo_letsencrypt/models/models.py:295
+#, python-format
+msgid "No certificate found."
+msgstr "Kein Zertifikat gefunden."
+
+#. module: flynn_odoo_letsencrypt
+#: selection:flynn_odoo_letsencrypt.flynn_odoo_letsencrypt,state:0
+msgid "Register (accept TOS)"
+msgstr "Registrieren (AGB akzeptieren)"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.ui.view,arch_db:flynn_odoo_letsencrypt.form
+msgid "Register and Accept TOS"
+msgstr "Registrieren und AGB akzeptieren"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_state
+msgid "State"
+msgstr "Status"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_key
+msgid "TLS private key"
+msgstr "TLS privater Schlüssel"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,field_description:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_cert
+msgid "TLS public certificate"
+msgstr "TLS öffentliches Zertifikat"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.ui.view,arch_db:flynn_odoo_letsencrypt.form
+msgid "Terms of Service"
+msgstr "Nutzungsbedingungen"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,help:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_flynn_route_id
+msgid ""
+"The ID of the route to add the certificate.  See `flynn -a yourapp route`, "
+"use the full string like 'http/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'"
+msgstr ""
+"Die ID der Route für welches das Zertifikat verwendet wird. Siehe `flynn -"
+"a yourapp route`, vollständiger String, wie 'http/XXXXXXXX-XXXX-XXXX-XXXX-"
+"XXXXXXXXXXXX'"
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,help:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_name
+msgid "The domain you are hosting your odoo installation."
+msgstr "Die Domain welche für die odoo Installation verwendet wird."
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,help:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_flynn_app
+msgid "The name of the app you want to install the certificate."
+msgstr "Der Name der App in der das Zertifikat installiert werden soll."
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model.fields,help:flynn_odoo_letsencrypt.field_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt_flynn_auth_key
+msgid "The value of `flynn -a controller env get AUTH_KEY`"
+msgstr "Der Wert von `flynn -a controller env get AUTH_KEY`"
+
+#. module: flynn_odoo_letsencrypt
+#: selection:flynn_odoo_letsencrypt.flynn_odoo_letsencrypt,state:0
+#: model:ir.ui.view,arch_db:flynn_odoo_letsencrypt.form
+msgid "Update"
+msgstr "Update"
+
+#. module: flynn_odoo_letsencrypt
+#: code:addons/flynn_odoo_letsencrypt/models/models.py:298
+#, python-format
+msgid "You need to set all variables first."
+msgstr "Zuerst müssen alle Variablen gesetzt werden."
+
+#. module: flynn_odoo_letsencrypt
+#: model:ir.model,name:flynn_odoo_letsencrypt.model_flynn_odoo_letsencrypt_flynn_odoo_letsencrypt
+msgid "flynn_odoo_letsencrypt.flynn_odoo_letsencrypt"
+msgstr "flynn_odoo_letsencrypt.flynn_odoo_letsencrypt"
