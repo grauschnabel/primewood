@@ -37,6 +37,8 @@ class MassMailingContact(models.Model):
     @api.depends('validation_key')
     def _compute_subscribe_to_newsletter_url(self):
         base_url = self.env['ir.config_parameter'].get_param('web.base.url')
+        if not base_url:
+            _logger.warning("Wrong base_url: set up if.config_parameters 'web.base.url'.")
         for record in self:
             record.subscribe_to_newsletter_url = urlparse.urljoin(
                 base_url, 'mail/mailing/subscribe/%(validation_key)s' % {
