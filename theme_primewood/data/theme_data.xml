@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Website Builder Background Images -->
+        <record id="theme_primewood.s_background_image_01" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">Website Background Image 01</field>
+            <field name="datas_fname">s_background_image_01.jpg</field>
+            <field name="type">url</field>
+            <field name="res_model">ir.ui.view</field>
+            <field name="url">/theme_primewood/static/img/backgrounds/naturformen-formen-menschen_hero-1.jpg</field>
+        </record>
+        <record id="theme_primewood.s_background_image_02" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">Website Background Image 02</field>
+            <field name="datas_fname">s_background_image_02.jpg</field>
+            <field name="type">url</field>
+            <field name="res_model">ir.ui.view</field>
+            <field name="url">/theme_primewood/static/img/backgrounds/Essgruppe_01_hero.jpg</field>
+        </record>
+        <record id="theme_primewood.s_background_image_03" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">Website Background Image 03</field>
+            <field name="datas_fname">s_background_image_03.jpg</field>
+            <field name="type">url</field>
+            <field name="res_model">ir.ui.view</field>
+            <field name="url">/theme_primewood/static/img/backgrounds/fueller_1.jpg</field>
+        </record>
+        <record id="theme_primewood.s_background_image_04" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">Website Background Image 04</field>
+            <field name="datas_fname">s_background_image_04.jpg</field>
+            <field name="type">url</field>
+            <field name="res_model">ir.ui.view</field>
+            <field name="url">/theme_primewood/static/img/backgrounds/griffe-1.jpg</field>
+        </record>
+        <record id="theme_primewood.s_background_image_05" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">Website Background Image 05</field>
+            <field name="datas_fname">s_background_image_05.jpg</field>
+            <field name="type">url</field>
+            <field name="res_model">ir.ui.view</field>
+            <field name="url">/theme_primewood/static/img/backgrounds/holzhaus-kueche-1.jpg</field>
+        </record>
+        <record id="theme_primewood.s_background_image_06" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">Website Background Image 06</field>
+            <field name="datas_fname">s_background_image_06.jpg</field>
+            <field name="type">url</field>
+            <field name="res_model">ir.ui.view</field>
+            <field name="url">/theme_primewood/static/img/backgrounds/olivenschrank-1.jpg</field>
+        </record>
+        <record id="theme_primewood.s_background_image_07" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">Website Background Image 07</field>
+            <field name="datas_fname">s_background_image_07.jpg</field>
+            <field name="type">url</field>
+            <field name="res_model">ir.ui.view</field>
+            <field name="url">/theme_primewood/static/img/backgrounds/stempel_1.jpg</field>
+        </record>
+        <record id="theme_primewood.s_background_image_08" model="ir.attachment">
+            <field name="public" eval="True"/>
+            <field name="name">Website Background Image 08</field>
+            <field name="datas_fname">s_background_image_08.jpg</field>
+            <field name="type">url</field>
+            <field name="res_model">ir.ui.view</field>
+            <field name="url">/theme_primewood/static/img/backgrounds/timer_1.jpg</field>
+        </record>
+    </data>
+</odoo>

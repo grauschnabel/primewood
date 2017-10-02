@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Asap');
+
+@navheight: 100px;
+
+// Theme colors
+@color-alpha: #f2f2f2;
+@color-beta: rgba(0, 0, 0, 0.75);
+@color-gamma: #825717;
+@color-delta: #178241;
+@color-epsilon: #178282;
+
+@link-color: #827717;
+
+// #821757, #6C1782, #2C1782, #174182, #178282, #178241, #2C8217, #6C8217, #825717, 
+
+@color-header: rgba(0, 0, 0, 0.50);
+@color-body-background: rgba(150, 150, 220, 0.3);
+@color-navbar-background: rgba(249, 251, 231, 1);
+@color-navbar: rgba(0, 0, 0, 0.75);
+
+// bootstrap buttons:
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+@btn-font-weight:                normal;
+
+@btn-default-color:              #333;
+@btn-default-bg:                 #f2f2f2;
+@btn-default-border:             #cccccc;
+
+@btn-primary-color:              #fff;
+@btn-primary-bg:                 @brand-primary;
+@btn-primary-border:             darken(@btn-primary-bg, 5%);
+
+@btn-success-color:              #fff;
+@btn-success-bg:                 @brand-success;
+@btn-success-border:             darken(@btn-success-bg, 5%);
+
+@btn-info-color:                 #fff;
+@btn-info-bg:                    @brand-info;
+@btn-info-border:                darken(@btn-info-bg, 5%);
+
+@btn-warning-color:              #fff;
+@btn-warning-bg:                 @brand-warning;
+@btn-warning-border:             darken(@btn-warning-bg, 5%);
+
+@btn-danger-color:               #fff;
+@btn-danger-bg:                  @brand-danger;
+@btn-danger-border:              darken(@btn-danger-bg, 5%);
+
+@btn-link-disabled-color:        @gray-light;
+
+// Allows for customizing button radius independently from global border radius
+@btn-border-radius-base:         @border-radius-base;
+@btn-border-radius-large:        @border-radius-large;
+@btn-border-radius-small:        @border-radius-small;
+
+
+
+body {
+  font-family: 'Asap', sans-serif;
+  background-color: @color-body-background;
+  font-size: 16px;
+  color: @color-beta;
+}
+
+#primewood_header {
+  img, .logo {
+    height: 69px;
+    max-height: 69px;
+    margin-top: 6px;
+  }
+  .navbar {
+    height: @navheight;
+    //    font-size: large;
+    border: none;
+    background-color: @color-navbar-background;
+    color: @color-navbar;
+    ul.nav li.divider {
+      margin-top: 40px;
+    }
+  }
+  .navbar-nav > li > a {
+    height: @navheight;
+    padding-top: 40px;
+  }
+}
+
+.oe_img_bg {
+  background-attachment:fixed;
+  //  background-position:center center;
+  //background-size:cover;
+}
+
+h1, h2, h3, h4, h5, h6, strong {
+  color: @color-header;
+}
+
+a, a:link {
+  color: @link-color;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #bf360c;
+}
