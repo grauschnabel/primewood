@@ -22,15 +22,15 @@
 // #E5400E, #CC390C, #B2320B, #992B09, #7F2408, #661C06, #4C1504, #330E03, #190701, 
 
 @color-header: rgba(0, 0, 0, 0.50);
-@color-body-background: rgba(150, 150, 220, 0.3);
+@color-body-background: rgba(150, 150, 220, 0.3); // alpah was 0.3
 @color-navbar-background: rgba(249, 251, 231, 1);
 @color-navbar: rgba(0, 0, 0, 0.75);
 
-@brand-primary:         rgba(23, 130, 130, 0.75);
-@brand-success:         rgba(36, 204, 101, 0.75);
-@brand-info:            rgba(31, 178, 178, 0.75);
-@brand-warning:         rgba(204, 130, 36, 0.75);
-@brand-danger:          rgba(204, 57, 12, 0.75);
+@brand-primary:         @color-alpha;
+@brand-success:         #3cb21f;
+@brand-info:            #268282;
+@brand-warning:         #b2771f;
+@brand-danger:          #cc390c;
 
 // bootstrap buttons:
 //== Buttons
@@ -87,7 +87,9 @@ body {
   }
   .navbar {
     height: @navheight;
-    //    font-size: large;
+  }
+  @media (min-width: 770px)
+{  .navbar {
     border: none;
     background-color: @color-navbar-background;
     color: @color-navbar;
@@ -99,12 +101,12 @@ body {
     height: @navheight;
     padding-top: 40px;
   }
-}
+}}
 
 .oe_img_bg {
   background-attachment:fixed;
-  //  background-position:center center;
-  //background-size:cover;
+  background-position:center center;
+  background-size:cover;
 }
 
 h1, h2, h3, h4, h5, h6, strong {
