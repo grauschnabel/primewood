@@ -19,7 +19,7 @@
 // #28E572, #24CC65, #1FB259, #1B994C, #167F3F, #126632, #0D4C26, #093319, #04190C,
 // #4DE528, #45CC24, #3CB21F, #33991B, #2B7F16, #226612, #194C0D, #113309, #081904,
 
-// #E5400E, #CC390C, #B2320B, #992B09, #7F2408, #661C06, #4C1504, #330E03, #190701, 
+// #E5400E, #CC390C, #B2320B, #992B09, #7F2408, #661C06, #4C1504, #330E03, #190701,
 
 @color-header: rgba(0, 0, 0, 0.50);
 @color-body-background: rgba(150, 150, 220, 0.3); // alpah was 0.3
@@ -84,14 +84,26 @@ body {
     max-height: 69px;
     margin-top: 6px;
   }
-  .navbar {
-    height: @navheight;
+  @media (max-width: 769px) {
+    .navbar {
+      height: @navheight;
+    }
+    ul.navbar-nav {
+      background-color: @color-navbar-background;
+      li.divider {
+        height: 1px;
+        margin: 0px;
+        padding: 0px;
+        border: 1px solid rgba(0, 0, 0, 0.3);   
+      }
+    }
   }
+
   @media (min-width: 770px)
-{  .navbar {
-    border: none;
-    background-color: @color-navbar-background;
-    color: @color-navbar;
+  {  .navbar {
+      border: none;
+      background-color: @color-navbar-background;
+      color: @color-navbar;
     ul.nav li.divider {
       margin-top: 40px;
     }
@@ -101,6 +113,7 @@ body {
     padding-top: 40px;
   }
 }}
+
 
 .oe_img_bg {
   background-attachment:fixed;
