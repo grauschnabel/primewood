@@ -13,11 +13,12 @@
     'category': 'Theme/Creative',
     'version':'0.1',
 
-    'depends': ['website'],
+    'depends': ['website', 'website_blog'],
 
     'data': [
         'data/theme_data.xml',
         'views/assets.xml',
+        'views/blog.xml',
         'views/layout.xml',
         'views/snippets.xml'
     ],
