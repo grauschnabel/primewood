@@ -42,7 +42,7 @@
 @btn-default-bg:                 #f2f2f2;
 @btn-default-border:             #cccccc;
 
-@btn-primary-color:              #fff;
+@btn-primary-color:              #333;
 @btn-primary-bg:                 @brand-primary;
 @btn-primary-border:             darken(@btn-primary-bg, 5%);
 
@@ -94,7 +94,7 @@ body {
         height: 1px;
         margin: 0px;
         padding: 0px;
-        border: 1px solid rgba(0, 0, 0, 0.3);   
+        border: 1px solid rgba(0, 0, 0, 0.3);
       }
     }
   }
@@ -104,15 +104,15 @@ body {
       border: none;
       background-color: @color-navbar-background;
       color: @color-navbar;
-    ul.nav li.divider {
-      margin-top: 40px;
+      ul.nav li.divider {
+        margin-top: 40px;
+      }
     }
-  }
-  .navbar-nav > li > a {
-    height: @navheight;
-    padding-top: 40px;
-  }
-}}
+     .navbar-nav > li > a {
+       height: @navheight;
+       padding-top: 40px;
+     }
+  }}
 
 
 .oe_img_bg {
@@ -132,4 +132,10 @@ a, a:link {
 
 a:hover {
   color: #bf360c;
+}
+
+.blog_title {
+  a, a:link {
+    font-weight: initial;
+  }
 }

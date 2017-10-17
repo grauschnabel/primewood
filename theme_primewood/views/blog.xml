@@ -54,4 +54,12 @@
       </section>
     </xpath>
   </template>
-g</odoo>
+
+  <template id="blog_post_complete" inherit_id="website_blog.blog_post_complete" name="Primewood Blog Post">
+    <xpath expr="//t[@t-foreach='blog_post.tag_ids']" position="replace">
+      <t t-foreach="blog_post.tag_ids" t-as="one_tag">
+        <a t-attf-href="#{blog_url(tag=one_tag.id)}" t-esc="one_tag.name"/>
+      </t>
+    </xpath>
+  </template>
+</odoo>

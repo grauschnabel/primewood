@@ -4,19 +4,21 @@
     <template id="snippet_options" name="Primewood Backgrounds" inherit_id="website.snippet_options">
 
       <!-- Change the Background Images -->
-      <xpath expr="//ul[@class='dropdown-menu']" position="inside">
-        <li data-background=""><a href="#">None</a></li>
-        <li class="divider"></li>
-        <li data-choose_image="choose_image"><a href="#"><b>Set Custom Image...</b></a></li>
-        <li class="divider"></li>
-        <li data-background="/web/image/theme_primewood.s_background_image_01"><a href="#">Naturformen formen Menschen</a></li>
-        <li data-background="/web/image/theme_primewood.s_background_image_02"><a href="#">Essgruppe 01 hero</a></li>
-        <li data-background="/web/image/theme_primewood.s_background_image_03"><a href="#">Füller</a></li>
-        <li data-background="/web/image/theme_primewood.s_background_image_04"><a href="#">Griffe</a></li>
-        <li data-background="/web/image/theme_primewood.s_background_image_05"><a href="#">Holzhaus Küche</a></li>
-        <li data-background="/web/image/theme_primewood.s_background_image_06"><a href="#">Tischplatte</a></li>
-        <li data-background="/web/image/theme_primewood.s_background_image_07"><a href="#">Stemepl</a></li>
-        <li data-background="/web/image/theme_primewood.s_background_image_08"><a href="#">Timer</a></li>
+      <xpath expr="//ul[@class='dropdown-menu']" position="replace">
+        <ul class="dropdown-menu">
+          <li data-background=""><a href="#">None</a></li>
+          <li class="divider"></li>
+          <li data-choose_image="choose_image"><a href="#"><b>Set Custom Image...</b></a></li>
+          <li class="divider"></li>
+          <li data-background="/web/image/theme_primewood.s_background_image_01"><a href="#">Naturformen formen Menschen</a></li>
+          <li data-background="/web/image/theme_primewood.s_background_image_02"><a href="#">Essgruppe 01 hero</a></li>
+          <li data-background="/web/image/theme_primewood.s_background_image_03"><a href="#">Füller</a></li>
+          <li data-background="/web/image/theme_primewood.s_background_image_04"><a href="#">Griffe</a></li>
+          <li data-background="/web/image/theme_primewood.s_background_image_05"><a href="#">Holzhaus Küche</a></li>
+          <li data-background="/web/image/theme_primewood.s_background_image_06"><a href="#">Tischplatte</a></li>
+          <li data-background="/web/image/theme_primewood.s_background_image_07"><a href="#">Stemepl</a></li>
+          <li data-background="/web/image/theme_primewood.s_background_image_08"><a href="#">Timer</a></li>
+        </ul>
       </xpath>
     </template>
   </data>
